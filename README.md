@@ -50,12 +50,15 @@ Com o objetivo de melhorar a interação com os clientes pensei nos passos a seg
 
 ## Case 5
 Fiz uma query que busca os dados da tabela users_emails e retorna os dados para serem exportados
+```
 SELECT *
 FROM users_emails
 WHERE data_registro >= DATE_SUB(CURRENT_DATE, INTERVAL 30 DAY);
+```
+
 
 Explicando a query, 
-1.	Select * para selecionar todos os dados da tabela
-2.	FROM users_email seleciona a tabela que vai ser retirado os dados
-3.	Where data_cadastro -> considerando que existe uma informação na tabela com o data_cadastro para verificar quando foi feito o cadastro do usuário.
-4.	>= DATE_SUB(current_date, interval 30 day) -> selecionar o dia atual e com base nisso conseguir definir os últimos 30 dias para selecionar só os usuários dos últimos 30 dias.
+1.	Select * -> para selecionar todos os dados da tabela
+2.	FROM users_email -> seleciona a tabela que vai ser retirado os dados
+3.	(Where data_registro >=) -> considerando que existe uma informação na tabela com o data_registro para verificar quando foi feito o cadastro do usuário.
+4.	DATE_SUB(current_date, interval 30 day) -> selecionar o dia atual e com base nisso conseguir definir os últimos 30 dias para selecionar só os usuários dos últimos 30 dias.
